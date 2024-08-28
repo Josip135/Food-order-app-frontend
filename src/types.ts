@@ -6,3 +6,23 @@ export type User = {
   grad: string;
   drzava: string;
 };
+
+export type Jelo = {
+  _id: string;
+  ime: string;
+  cijena: number;
+}
+
+export type Restoran = {
+  _id: string;
+  user: string;
+  imeRestorana: string;
+  grad: string;
+  drzava: string;
+  cijenaDostave: number;
+  procijenjenoVrijemeDostave: number;
+  vrsteJela: string[];
+  jelovnik: Jelo[];
+  urlSlike: string;
+  zadnjiUpdate: string;
+};

@@ -18,6 +18,12 @@ const UsernameMenu = () => {
 
       <DropdownMenuContent className="bg-white content-center px-2 py-2 rounded-lg content-start border-solid border-2 border-orange-100 shadow-md">
         <Separator />
+
+        <DropdownMenuItem className="font-bold hover:text-orange-500 rounded-lg mb-2 shadow-md border-solid border-2 border-orange-500 px-1 py-1">
+          <Link to="/manage-restaurant" className="mb-10  " >Upravljanje restoranom</Link>
+        </DropdownMenuItem>
+        <Separator />
+
         <DropdownMenuItem className="font-bold hover:text-orange-500 rounded-lg mb-2 shadow-md border-solid border-2 border-orange-500 px-1 py-1">
           <Link to="/user-profile" className="mb-10  " >Profil korisnika</Link>
         </DropdownMenuItem>

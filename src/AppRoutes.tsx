@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage.tsx";
 import AuthCallbackPage from "./pages/AuthCallbackPage.tsx";
 import UserProfilePage from "./pages/UserProfilePage.tsx";
 import ZasticenaRuta from "./auth/ZasticenaRuta.tsx";
+import ManageRestaurantPage from "./pages/ManageRestaurantPage.tsx";
 
 const AppRoutes = () => {
   return (
@@ -21,6 +22,11 @@ const AppRoutes = () => {
         </Layout>} />
       </Route>
 
+      <Route element={<ZasticenaRuta />}>
+        <Route path="/manage-restaurant" element={<Layout>
+          <ManageRestaurantPage />
+        </Layout>} />
+      </Route>
 
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
