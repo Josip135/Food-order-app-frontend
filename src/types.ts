@@ -26,3 +26,13 @@ export type Restoran = {
   urlSlike: string;
   zadnjiUpdate: string;
 };
+
+export type RestoranRezultatPretrazivanja = {
+  data: Restoran[],
+
+  pagination: {
+    total: number,
+    stranica: number,
+    stranice: number
+  }
+}

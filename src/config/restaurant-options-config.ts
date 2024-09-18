@@ -1,5 +1,34 @@
 export const vrsteJelaLista = [
-  "Američka kuhinja",
+  "American",
+  "BBQ",
+  "Breakfast",
+  "Burgers",
+  "Cafe",
+  "Chinese",
+  "Desserts",
+  "French",
+  "Greek",
+  "Healthy",
+  "Indian",
+  "Italian",
+  "Japanese",
+  "Mexican",
+  "Noodles",
+  "Organic",
+  "Pasta",
+  "Pizza",
+  "Salads",
+  "Seafood",
+  "Spanish",
+  "Steak",
+  "Sushi",
+  "Tacos",
+  "Tapas",
+  "Vegan",
+]
+
+/*
+"Američka kuhinja",
   "BBQ",
   "Doručak",
   "Burgeri",
@@ -17,7 +46,7 @@ export const vrsteJelaLista = [
   "Organska hrana",
   "Pasta",
   "Pizza",
-  "Saladte",
+  "Salate",
   "Morska hrana",
   "Španjolska kuhinja",
   "Steak",
@@ -26,4 +55,4 @@ export const vrsteJelaLista = [
   "Veganska hrana",
   "Alkohol",
   "Pića"
-]
+*/

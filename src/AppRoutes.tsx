@@ -5,6 +5,7 @@ import AuthCallbackPage from "./pages/AuthCallbackPage.tsx";
 import UserProfilePage from "./pages/UserProfilePage.tsx";
 import ZasticenaRuta from "./auth/ZasticenaRuta.tsx";
 import ManageRestaurantPage from "./pages/ManageRestaurantPage.tsx";
+import SearchPage from "./pages/SearchPage.tsx";
 
 const AppRoutes = () => {
   return (
@@ -15,6 +16,10 @@ const AppRoutes = () => {
         </Layout>} />
 
       <Route path="/auth-callback" element={<AuthCallbackPage />} />
+
+      <Route path="/search/:grad" element={<Layout showHeroBurger={false}>
+        <SearchPage />
+      </Layout>} />
 
       <Route element={<ZasticenaRuta />}>
         <Route path="/user-profile" element={<Layout>
