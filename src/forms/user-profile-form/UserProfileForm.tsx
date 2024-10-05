@@ -16,15 +16,17 @@ const formSchema = z.object({
   drzava: z.string().min(1, "Drzava je potrebna"),
 });
 
-type UserFormData = z.infer<typeof formSchema>;
+export type UserFormData = z.infer<typeof formSchema>;
 
 type Props = {
   trenutniKorisnik: User;
   onSave: (userProfileData: UserFormData) => void;
   isLoading: boolean;
+  title?: string;
+  buttonText?: string;
 }
 
-const UserProfileForm = ({ onSave, isLoading, trenutniKorisnik }: Props) => {
+const UserProfileForm = ({ onSave, isLoading, trenutniKorisnik, title = "Profil korisnika", buttonText = "Izmijeni", }: Props) => {
 
   const form = useForm<UserFormData>({
     resolver: zodResolver(formSchema),
@@ -40,7 +42,7 @@ const UserProfileForm = ({ onSave, isLoading, trenutniKorisnik }: Props) => {
       <form onSubmit={form.handleSubmit(onSave)} className="space-y-4 bg-gray-50 rounded-lg mg:p-10 px-10 py-5">
 
         <div>
-          <h2 className="text-2xl font-bold text-center">Profil Korisnika</h2>
+          <h2 className="text-2xl font-bold text-center">{title}</h2>
           <FormDescription className=" text-center">Ovdje možete vidjeti i mijenjati informacije o svom profilu</FormDescription>
         </div>
 
@@ -97,7 +99,7 @@ const UserProfileForm = ({ onSave, isLoading, trenutniKorisnik }: Props) => {
           )} />
 
         </div>
-        {isLoading ? (<LoadingButton />) : (<Button type="submit" className="bg-orange-500">Izmijeni</Button>)}
+        {isLoading ? (<LoadingButton />) : (<Button type="submit" className="bg-orange-500">{buttonText}</Button>)}
 
       </form>
     </Form>

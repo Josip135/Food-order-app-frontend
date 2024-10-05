@@ -1,9 +1,26 @@
 import { useQuery } from "react-query";
-import { RestoranRezultatPretrazivanja } from "../types";
+import { Restoran, RestoranRezultatPretrazivanja } from "../types";
 import { SearchState } from "../pages/SearchPage";
 
-
+//https://food-order-app-backend-gp2t.onrender.com
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+export const useGetRestaurants = (restoranId?: string) => {
+
+  const getRestaurantByIdRequest = async (): Promise<Restoran> => {
+    const response = await fetch(`${API_BASE_URL}/api/restaurant/${restoranId}`);
+
+    if (!response.ok) {
+      throw new Error("Problem pri dohvaćanju restorana!");
+    }
+
+    return response.json();
+  }
+
+  const { data: restoran, isLoading } = useQuery("fetchRestaurant", getRestaurantByIdRequest, { enabled: !!restoranId, });
+
+  return { restoran, isLoading };
+}
 
 export const useSearchRestaurants = (searchState: SearchState, grad?: string) => {
 

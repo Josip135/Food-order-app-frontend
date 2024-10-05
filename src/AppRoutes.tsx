@@ -6,6 +6,7 @@ import UserProfilePage from "./pages/UserProfilePage.tsx";
 import ZasticenaRuta from "./auth/ZasticenaRuta.tsx";
 import ManageRestaurantPage from "./pages/ManageRestaurantPage.tsx";
 import SearchPage from "./pages/SearchPage.tsx";
+import DetailPage from "./pages/DetailPage.tsx";
 
 const AppRoutes = () => {
   return (
@@ -19,6 +20,10 @@ const AppRoutes = () => {
 
       <Route path="/search/:grad" element={<Layout showHeroBurger={false}>
         <SearchPage />
+      </Layout>} />
+
+      <Route path="/detail/:restoranId" element={<Layout showHeroBurger={false}>
+        <DetailPage />
       </Layout>} />
 
       <Route element={<ZasticenaRuta />}>
