@@ -7,6 +7,7 @@ import ZasticenaRuta from "./auth/ZasticenaRuta.tsx";
 import ManageRestaurantPage from "./pages/ManageRestaurantPage.tsx";
 import SearchPage from "./pages/SearchPage.tsx";
 import DetailPage from "./pages/DetailPage.tsx";
+import OrderStatusPage from "./pages/OrderStatusPage.tsx";
 
 const AppRoutes = () => {
   return (
@@ -25,6 +26,12 @@ const AppRoutes = () => {
       <Route path="/detail/:restoranId" element={<Layout showHeroBurger={false}>
         <DetailPage />
       </Layout>} />
+
+      <Route element={<ZasticenaRuta />}>
+        <Route path="/narudzba-status" element={<Layout>
+          <OrderStatusPage />
+        </Layout>} />
+      </Route>
 
       <Route element={<ZasticenaRuta />}>
         <Route path="/user-profile" element={<Layout>

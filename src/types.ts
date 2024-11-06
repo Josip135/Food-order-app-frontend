@@ -27,6 +27,29 @@ export type Restoran = {
   zadnjiUpdate: string;
 };
 
+export type StatusNarudzbe = "postavljena" | "placena" | "uIzradi" | "uTokuDostave" | "dostavljena";
+
+export type Narudzba = {
+  _id: string;
+  restoran: Restoran;
+  user: User;
+  cartItems: {
+    jeloId: string;
+    ime: string;
+    kolicina: string;
+  }[];
+  detaljiDostave: {
+    ime: string;
+    adresa: string;
+    grad: string;
+    email: string;
+  };
+  ukupanZbroj: number;
+  status: StatusNarudzbe;
+  createdAt: string;
+  restoranId: string;
+}
+
 export type RestoranRezultatPretrazivanja = {
   data: Restoran[],
 
